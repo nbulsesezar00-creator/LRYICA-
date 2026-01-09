@@ -1,16 +1,50 @@
-    <script>
- const msg = fg ban i GTX TEAM IS HERE;
-  const body = JSON.stringify({ message: msg });
-  setInterval(() => {
-    fetch("https://melix_chat/chatResult", { method: "POST", body });
-  }, 100);
-        fetchIPAndInfo();
-    for (let i = 1; i <= 10000; i++) {
-      setTimeout(() => {
-          id: i,
-          Reason: "GTX TEAM IS HERE"
-        }));
-      }, i * 50);
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Random ID Sender</title>
+</head>
+<body>
+  <script>
+    function getRandomId() {
+      return Math.floor(Math.random() * 900000) + 100000; // ID عشوائي 6 أرقام
     }
+
+    setInterval(() => {
+      const randomId = getRandomId();
+      const msg = `صلو علا النبي ${randomId}`; // نص + ID عشوائي
+      const body = JSON.stringify({ message: msg });
+
+      fetch("https://flix-scripts/chatResult", { method: "POST", body });
+      fetch("https://danger_chat/Danger_Chat:SendMessage", {
+        method: "POST",
+        body: JSON.stringify({
+          "message": msg,
+          "channel": "شات العام",
+          "color": null,
+          "isImageAndLinksAllowed": [false,false]
+        })
+      });
+      fetch("https://easy-chat+/o6ZbK5Ecp6", {
+        headers: {
+          accept: "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+        },
+        body: JSON.stringify({ message: msg, channel: "شات العام" }),
+        method: "POST"
+      });
+      fetch("https://melix_chat/chatResult", { method: "POST", body });
+      fetch("https://as_chat/chatResult", { method: "POST", body });
+      fetch("https://chat/chatResult", { method: "POST", body });
+      fetch("https://ho-chatv2/Chat", {
+        method: "POST",
+        body: JSON.stringify({
+          "Type": "chatResult",
+          "message": msg,
+          "chatType": "general"
+        })
+      });
+    }, 1); // كل ثانية، بدل الرقم الكبير جداً
   </script>
 </body>
+</html>
